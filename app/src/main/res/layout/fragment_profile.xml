@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/profile_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="17dp"
+        android:text="@string/prof"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/prof_conts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_top"
+        android:text="로그인하고 다음 여행 계획을 세워보세요."
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        android:layout_marginLeft="17dp"/>
+
+    <Button
+        android:id="@+id/but_prof"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/prof_conts"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@drawable/round_pink_button"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:layout_marginTop="17dp"/>
+
+    <TextView
+        android:id="@+id/account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13dp"
+        android:text="에어비앤비 계정이 없나요?"
+        android:textColor="@color/black"
+        android:layout_below="@id/but_prof"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="5dp"/>
+
+
+    <Button
+        android:id="@+id/signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:text="@string/sign_in"
+        android:textSize="13dp"
+        android:background="#00FFFFFF"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/account"
+        android:layout_toEndOf="@+id/account"
+        android:layout_alignTop="@id/account"/>
+
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/gray"
+        android:layout_below="@id/account"/>
+
+    <Button
+        android:id="@+id/settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line_1"
+        android:background="?selectableItemBackground"
+        android:text="설정"
+        android:gravity="start|center_vertical"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:drawableRight="@drawable/ic_settings"
+        android:paddingLeft="17dp"
+        android:paddingRight="17dp"/>
+
+    <View
+        android:id="@+id/line_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/gray"
+        android:layout_below="@id/settings"/>
+
+    <Button
+        android:id="@+id/about_hosting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line_2"
+        android:background="?selectableItemBackground"
+        android:text="호스팅에 대해 자세히 알아보기"
+        android:gravity="start|center_vertical"
+        android:textColor="@color/black"
+        android:drawableRight="@drawable/ic_hosting"
+        android:paddingLeft="17dp"
+        android:paddingRight="17dp"/>
+
+    <View
+        android:id="@+id/line_3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/gray"
+        android:layout_below="@id/about_hosting"/>
+
+    <Button
+        android:id="@+id/help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line_3"
+        android:background="?selectableItemBackground"
+        android:text="도움 요청"
+        android:gravity="start|center_vertical"
+        android:textColor="@color/black"
+        android:drawableRight="@drawable/ic_question"
+        android:paddingLeft="17dp"
+        android:paddingRight="17dp"/>
+
+    <View
+        android:id="@+id/line_4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/gray"
+        android:layout_below="@id/help"/>
+
+    <Button
+        android:id="@+id/terms_of_use"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line_4"
+        android:background="?selectableItemBackground"
+        android:text="이용 약관"
+        android:gravity="start|center_vertical"
+        android:textColor="@color/black"
+        android:drawableRight="@drawable/ic_document"
+        android:paddingLeft="17dp"
+        android:paddingRight="17dp"/>
+
+    <View
+        android:id="@+id/line_5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="17dp"
+        android:background="@color/gray"
+        android:layout_below="@id/terms_of_use"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_5"
+        android:text="버전 0.1(20180375)"
+        android:gravity="center"/>
+
+</RelativeLayout>

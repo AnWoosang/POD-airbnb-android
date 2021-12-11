@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/profile_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이름"
+                android:textSize="30sp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <Button
+                android:id="@+id/show_prof"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="프로필 보기"
+                android:layout_below="@+id/user_name"
+                android:background="@android:color/transparent"
+                android:minWidth="0dp"
+                android:minHeight="0dp"/>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/line_0"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/gray"
+            android:layout_below="@+id/profile_top"/>
+
+
+        <TextView
+            android:id="@+id/account_ma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_0"
+            android:text="@string/account_manage"
+            android:textColor="@color/darkgray"
+            android:layout_marginHorizontal="17dp"
+            android:textSize="13sp"/>
+
+        <Button
+            android:id="@+id/pinform"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/account_ma"
+            android:background="?selectableItemBackground"
+            android:text="@string/personal_inform"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:drawableRight="@drawable/ic_male"
+            android:layout_marginHorizontal="17dp"/>
+
+
+        <View
+            android:id="@+id/line_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@id/pinform"/>
+
+        <Button
+            android:id="@+id/pay_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_1"
+            android:background="?selectableItemBackground"
+            android:text="@string/pay"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:drawableRight="@drawable/ic_money"
+            android:layout_marginHorizontal="17dp"/>
+
+        <View
+            android:id="@+id/line_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@id/pay_price"/>
+
+        <Button
+            android:id="@+id/noti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_2"
+            android:background="?selectableItemBackground"
+            android:text="@string/notice"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:drawableRight="@drawable/ic_bell"
+            android:drawableTint="@color/black"
+            android:layout_marginHorizontal="17dp"/>
+
+        <View
+            android:id="@+id/line_3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@id/noti"/>
+
+        <Button
+            android:id="@+id/busi_trip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_3"
+            android:background="?selectableItemBackground"
+            android:text="@string/business_trip"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:drawableRight="@drawable/ic_building"
+            android:layout_marginHorizontal="17dp"/>
+
+        <View
+            android:id="@+id/line_4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@id/busi_trip"/>
+
+        <TextView
+            android:id="@+id/host_ing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_4"
+            android:text="@string/hosting"
+            android:textColor="@color/darkgray"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="17dp"
+            android:textSize="13sp"/>
+
+        <Button
+            android:id="@+id/host_change"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/host_ing"
+            android:background="?selectableItemBackground"
+            android:text="@string/host_mode"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:drawableRight="@drawable/ic_change"
+            android:layout_marginHorizontal="17dp"/>
+
+        <View
+            android:id="@+id/line_5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@id/host_change"/>
+
+        <Button
+            android:id="@+id/expe_manage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_5"
+            android:background="?selectableItemBackground"
+            android:text="@string/exp_manage"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:drawableRight="@drawable/ic_change"
+            android:layout_marginHorizontal="17dp"/>
+
+        <View
+            android:id="@+id/line_6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@id/expe_manage"/>
+
+        <TextView
+            android:id="@+id/recommend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_6"
+            android:text="@string/recom_cred"
+            android:textColor="@color/darkgray"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="17dp"
+            android:textSize="13sp"/>
+
+        <RelativeLayout
+            android:id="@+id/invite_h"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recommend"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:id="@+id/hostinvite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/invite_host"
+                android:gravity="start|center_vertical"
+                android:layout_toLeftOf="@+id/host_present"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/hostinviteEx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hostinvite"
+                android:layout_toLeftOf="@id/host_present"
+                android:text="@string/invite_host_ex"
+                android:textSize="13sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:id="@+id/host_present"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_present"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/line_7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@id/invite_h"/>
+
+        <TextView
+            android:id="@+id/sup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_7"
+            android:text="@string/support"
+            android:textColor="@color/darkgray"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="17dp"
+            android:textSize="13sp"/>
+
+        <Button
+            android:id="@+id/guide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sup"
+            android:background="?selectableItemBackground"
+            android:text="@string/air_guide"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:drawableRight="@drawable/ic_globe"
+            android:layout_marginHorizontal="17dp"/>
+
+        <View
+            android:id="@+id/line_8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@+id/guide"/>
+
+        <RelativeLayout
+            android:id="@+id/secure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_8"
+            android:background="?selectableItemBackground"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:id="@+id/sec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/security_center"
+                android:gravity="start|center_vertical"
+                android:layout_toLeftOf="@+id/sec_img"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/sec_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sec"
+                android:layout_toLeftOf="@id/sec_img"
+                android:text="@string/sec_center_ex"
+                android:textSize="13sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:id="@+id/sec_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_globe"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/line_9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@+id/secure"/>
+
+        <RelativeLayout
+            android:id="@+id/contact_neighbor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_9"
+            android:background="?selectableItemBackground"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:id="@+id/contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/neighbor_support"
+                android:gravity="start|center_vertical"
+                android:layout_toLeftOf="@+id/contact_img"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/contact_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contact"
+                android:layout_toLeftOf="@id/contact_img"
+                android:text="@string/ns_ex"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"/>
+
+            <ImageView
+                android:id="@+id/contact_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_question"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+        <View
+            android:id="@+id/line_10"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@+id/contact_neighbor"/>
+
+        <Button
+            android:id="@+id/help_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contact_neighbor"
+            android:background="?selectableItemBackground"
+            android:text="@string/help"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:drawableRight="@drawable/ic_question"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="17dp"/>
+
+        <View
+            android:id="@+id/line_11"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@+id/help_me"/>
+
+
+        <Button
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_11"
+            android:background="?selectableItemBackground"
+            android:text="@string/comment_op"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:drawableRight="@drawable/ic_opinion"
+            android:layout_marginHorizontal="17dp"/>
+
+        <View
+            android:id="@+id/line_12"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@+id/comment"/>
+
+        <TextView
+            android:id="@+id/statue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_12"
+            android:text="@string/law"
+            android:textColor="@color/darkgray"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="17dp"
+            android:textSize="13sp"/>
+
+        <Button
+            android:id="@+id/te_of_u"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/statue"
+            android:background="?selectableItemBackground"
+            android:text="@string/tou"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:drawableRight="@drawable/ic_document"
+            android:layout_marginHorizontal="17dp"/>
+
+        <View
+            android:id="@+id/line_13"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@+id/te_of_u"/>
+
+        <Button
+            android:id="@+id/log_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_13"
+            android:background="?selectableItemBackground"
+            android:text="@string/logout"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:layout_marginHorizontal="17dp"/>
+
+        <View
+            android:id="@+id/line_14"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/whitegray"
+            android:layout_below="@+id/log_out"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line_14"
+            android:text="@string/version"
+            android:layout_marginVertical="15dp"
+            android:gravity="center"/>
+
+    </RelativeLayout>
+
+</ScrollView>

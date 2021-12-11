@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "97463139481",
+    "project_id": "airbnb-clone-dodream",
+    "storage_bucket": "airbnb-clone-dodream.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97463139481:android:68108073116f79f1cf4c08",
+        "android_client_info": {
+          "package_name": "com.pod.airbnb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97463139481-kaujdo1h8gnjsemnnjpbq2f44il3vv28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvk599AZS0f9JEN3ZbFZ1pnMkIsPrd6n8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97463139481-8ai2nosniq73ers5ssk0vlopfkf8rcid.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "97463139481-lll130nmd1tvrpmvbgtjpi1kdf40mkme.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codewithsjoonb.AirBnb-Home"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

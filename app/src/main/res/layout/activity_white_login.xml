@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WhiteLoginActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <ImageButton
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/quit_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_out"
+        android:backgroundTint="@color/black"
+        android:layout_gravity="left|center_vertical"/>
+
+    <TextView
+        android:id="@+id/introduce_bnb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_airbnb"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="17dp"
+        android:layout_marginVertical="20dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/outline_button"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginVertical="10dp"
+            android:background="?selectableItemBackground"
+            android:text="@string/login_box_nation"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:gravity="start"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:layout_marginHorizontal="3dp">
+
+            <EditText
+                android:id="@+id/phone_num_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/ip_phone_num"
+                android:textColorHint="@color/black"
+                android:textSize="15sp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="17dp"
+        android:text="통화나 문자로 전화번호를 확인하겠습니다. 일반 문자 메시지 요금 및 데이터 요금이 부과됩니다."
+        android:textSize="12sp"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="17dp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/round_pink_button"
+        android:text="계속하기"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="17dp"
+        android:layout_marginBottom="17dp">
+        <View
+            android:id="@+id/front_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/or"/>
+
+        <TextView
+            android:id="@+id/or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="또는"
+            android:layout_marginHorizontal="10dp"/>
+
+
+        <View
+            android:id="@+id/behind_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/or"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/login_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/outline_button"
+        android:text="@string/signin_email"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="17dp"
+        android:drawableLeft="@drawable/ic_email_login"
+        android:paddingLeft="10dp"/>
+
+    <Button
+        android:id="@+id/login_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/outline_button"
+        android:text="@string/signin_facebook"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="17dp"
+        android:drawableLeft="@drawable/ic_facebook_login"
+        android:paddingLeft="10dp"/>
+
+    <Button
+        android:id="@+id/login_google"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/outline_button"
+        android:text="@string/signin_google_2"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="17dp"
+        android:drawableLeft="@drawable/ic_google_login"
+        android:paddingLeft="10dp"/>
+
+    <Button
+        android:id="@+id/login_apple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/outline_button"
+        android:text="@string/signin_apple"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:drawableLeft="@drawable/ic_apple_login"
+        android:paddingLeft="10dp"/>
+
+</LinearLayout>
