@@ -30,6 +30,7 @@ class HostingActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         adapter = ListAdapter(this)
+
         val recyclerView: RecyclerView = findViewById(R.id.host_accomdation)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
@@ -48,6 +49,7 @@ class HostingActivity : AppCompatActivity() {
                         putExtra("data", data)
                         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     }.run { startActivity(this) }
+
                 }
 
             })

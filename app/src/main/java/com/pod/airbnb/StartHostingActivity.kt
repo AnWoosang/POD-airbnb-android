@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.fragment_logined_profile.*
 class StartHostingActivity : AppCompatActivity() {
 
     var prof : ProfileDTO? = null
-    var hostingActivity = HostingDTO()
+    private var hostingActivity = HostingDTO()
 //    var contentsDTO = ContentsDTO()
     var auth: FirebaseAuth? = null
     var firestore: FirebaseFirestore? = null
@@ -66,10 +66,17 @@ class StartHostingActivity : AppCompatActivity() {
 //
 //            firestore?.collection("hosting")?.document(auth?.currentUser?.displayName.toString())?.set(contentsDTO)
 
+
             hostingActivity.addedByUser = auth!!.currentUser?.email.toString()
             hostingActivity.description = accom_descript.text.toString()
             hostingActivity.name = accom_name.text.toString()
-            hostingActivity.address = accom_add.text.toString()
+            hostingActivity.streetKey = accom_add.text.toString()
+            hostingActivity.favorite = false
+            hostingActivity.visited = false
+            hostingActivity.latitude = 0.0
+            hostingActivity.longitude = 0.0
+
+
 
             Log.d("TAG", "숙소 이름 : " + hostingActivity.name.toString() + ", 호스트 이메일 : " + hostingActivity.addedByUser.toString() + ", 숙소 소개 : " + hostingActivity.description.toString())
             databaseReference.child("lodging-items").push().setValue(hostingActivity);

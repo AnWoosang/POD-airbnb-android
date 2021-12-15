@@ -6,10 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.pod.airbnb.navigation.model.HostingDTO
 import kotlinx.android.synthetic.main.activity_hosting.view.*
@@ -32,10 +29,11 @@ class ListAdapter(private val context: Context): RecyclerView.Adapter<ListAdapte
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val name: TextView = itemView.findViewById(R.id.frag_onboard_accomo_name)
         val addedByUser: TextView = itemView.findViewById(R.id.frag_onboard_user)
-
+//        val fillheart: ImageView = itemView.findViewById(R.id.heart)
         fun bind(hosting: HostingDTO){
             name.text = hosting.name
             addedByUser.text = hosting.addedByUser
+//            fillheart.setImageResource(R.drawable.ic_fullheart)
 
             val pos = adapterPosition
             if(pos != RecyclerView.NO_POSITION){
@@ -43,14 +41,6 @@ class ListAdapter(private val context: Context): RecyclerView.Adapter<ListAdapte
                     listener?.onItemClick(itemView, hosting, pos)
                 }
             }
-
-//            itemView.setOnClickListener {
-//                Toast.makeText(context, "클릭", Toast.LENGTH_LONG).show()
-//                Intent(context, HostingDetailActivity::class.java).apply {
-//                    putExtra("datas", hosting)
-//                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-//                }.run { context.startActivity(this) }
-//            }
         }
     }
 

@@ -1,6 +1,7 @@
 package com.pod.airbnb
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import android.util.Log
 import android.view.MotionEvent
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.fragment.app.Fragment
 import com.google.android.gms.location.FusedLocationProviderClient
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -18,6 +20,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.database.FirebaseDatabase
+import com.pod.airbnb.navigation.model.ChattingDTO
 import com.pod.airbnb.navigation.model.HostingDTO
 import kotlinx.android.synthetic.main.activity_hosting_detail.*
 import org.jetbrains.anko.find
@@ -26,6 +30,8 @@ class HostingDetailActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap
 
     private lateinit var latLng : LatLng
     lateinit var datas : HostingDTO
+    private val firebaseDatabase = FirebaseDatabase.getInstance()
+    private val db = firebaseDatabase.reference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,14 +40,19 @@ class HostingDetailActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap
         val geocoder = Geocoder(this)
 
         datas = intent.getSerializableExtra("data") as HostingDTO
+//        if(datas.favorite!!){
+//        wish_heart.setSelected(datas.favorite!!)
+//    }
         lodge_name.text = datas.name
         lodge_contents.text = datas.description
 
         wish_heart.setOnClickListener {
-            if(wish_heart.isSelected == true){
+            if(wish_heart.isSelected){
                 wish_heart.setSelected(false)
+                db.child("lodging-items").child("favorite").setValue(false)
             } else{
                 wish_heart.setSelected(true)
+                db.child("lodging-items").child("favorite").setValue(true)
             }
         }
 
@@ -49,14 +60,14 @@ class HostingDetailActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
             Toast.makeText(this, "위치 권한을 설정해주세요.", Toast.LENGTH_SHORT).show()
         } else{
-            if(datas.address != null){
-                val cor = geocoder.getFromLocationName(datas.address, 1)
+            if(datas.streetKey != null){
+                val cor = geocoder.getFromLocationName(datas.streetKey, 1)
                 Log.d("TAG", "좌표 : ${cor[0].latitude}, ${cor[0].longitude}")
                 latLng = LatLng(cor[0].latitude, cor[0].longitude)
                 val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
                 mapFragment!!.getMapAsync(this)
             } else{
-                latLng = LatLng(datas.lat!!, datas.lng!!)
+                latLng = LatLng(datas.latitude!!, datas.longitude!!)
                 val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
                 mapFragment!!.getMapAsync(this)
             }

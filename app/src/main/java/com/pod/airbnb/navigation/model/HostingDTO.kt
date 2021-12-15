@@ -3,12 +3,12 @@ package com.pod.airbnb.navigation.model
 import java.io.Serializable
 
 data class HostingDTO(
-    var name: String? = null,
-    var isVisited: Boolean = false,
-    var isFavorite: Boolean = false,
     var addedByUser: String? = null,
     var description: String? = null,
-    var address: String? = null,
-    var lat: Double? = null,
-    var lng: Double? = null
+    var favorite: Boolean = false,
+    var visited: Boolean = false,
+    var streetKey: String? = null,
+    var latitude: Double? = null,
+    var longitude: Double? = null,
+    var name: String? = null,
 ) : Serializable

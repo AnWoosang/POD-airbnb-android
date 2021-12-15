@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChattingActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/chat_room_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/quit_chat"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/ic_back"
+            android:backgroundTint="@color/black"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/chat_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="25sp"/>
+
+    </RelativeLayout>
+    <View
+        android:id="@+id/chat_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/gray"
+        android:layout_below="@+id/chat_room_top"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_Chat"
+        android:layout_below="@id/chat_line"
+        android:layout_above="@id/chat_room_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:id="@+id/chat_room_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:id="@+id/ip_chat"
+            android:layout_toStartOf="@+id/send_msg"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/round_outline_button"
+            android:backgroundTint="@color/darkgray"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                android:background="@drawable/round_button"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edittext_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="메시지 작성하기"
+                    android:textSize="20sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/send_msg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_send"/>
+    </RelativeLayout>
+</RelativeLayout>

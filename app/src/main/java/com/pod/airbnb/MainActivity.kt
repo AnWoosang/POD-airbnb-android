@@ -19,24 +19,34 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.pod.airbnb.databinding.ActivityMainBinding
 import com.pod.airbnb.navigation.*
+import com.pod.airbnb.navigation.model.HostingDTO
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_search.*
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var auth: FirebaseAuth
+    lateinit var lodgeData: HostingDTO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val intent = Intent(this, LoadingActivity::class.java)
-        startActivity(intent)
+        startActivity(Intent(this, LoadingActivity::class.java))
 
-        bottom_navigation.setOnNavigationItemSelectedListener(this)
+        if(intent.getSerializableExtra("chatData") != null){
+            lodgeData = intent.getSerializableExtra("lodgeData") as HostingDTO
+            bottom_navigation.setOnNavigationItemSelectedListener(this)
+            bottom_navigation.selectedItemId = R.id.action_wishlist
 
-        bottom_navigation.selectedItemId = R.id.action_search
-
+            val bundle = Bundle()
+            bundle.putSerializable("lodgeData", lodgeData)
+        } else{
+            Log.d("fuck", "jwefioajfoiejfow")
+            bottom_navigation.setOnNavigationItemSelectedListener(this)
+            bottom_navigation.selectedItemId = R.id.action_search
+        }
     }
 
 

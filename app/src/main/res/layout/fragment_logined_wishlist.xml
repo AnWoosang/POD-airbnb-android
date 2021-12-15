@@ -15,6 +15,14 @@
         android:textSize="30sp"
         android:textColor="@color/black"/>
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/wish_recycle"
+        android:layout_below="@+id/wish_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
     <TextView
         android:id="@+id/wishlist_explain"
         android:layout_width="match_parent"
@@ -37,7 +45,8 @@
         android:text="@string/take_a_tour"
         android:gravity="start|center_vertical"
         android:textColor="@color/darkCyan"
-        android:paddingLeft="17dp"/>
+        android:paddingLeft="17dp"
+        android:clickable="false"/>
 
 
 
