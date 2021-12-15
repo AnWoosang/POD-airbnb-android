@@ -12,7 +12,8 @@ data class ProfileDTO(
     var phone_num : String? = null,
     var uid : String? = null,
     var timestamp: Long? = null,
-    var photoUri: String? = null,
+    var photo_uri: Uri? = null,
     var job: String? = null,
-    var address: String? = null
+    var address: String? = null,
+    var hosting: Int = 0
 ) {}

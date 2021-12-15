@@ -34,6 +34,8 @@ class PhotoProfileActivity : AppCompatActivity() {
     var photoUri: Uri? =null
     var auth: FirebaseAuth? = null
     var firestore: FirebaseFirestore? = null
+    var profileDTO = ProfileDTO()
+    var p_name : String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,7 +70,6 @@ class PhotoProfileActivity : AppCompatActivity() {
 
         save_photo_prof.setOnClickListener {
 
-            var profileDTO = ProfileDTO()
             profileDTO.address = address_edittext!!.text.toString()
             profileDTO.job = job_edittext!!.text.toString()
             profileDTO.uid = prof?.uid.toString()
@@ -77,8 +78,8 @@ class PhotoProfileActivity : AppCompatActivity() {
             profileDTO.timestamp = prof?.timestamp?.toLong()
             profileDTO.email = prof?.email.toString()
             profileDTO.birth = prof?.birth?.toInt()
-            profileDTO.photoUri = photoUri.toString()
             profileDTO.name = prof?.name.toString()
+            profileDTO.photo_uri = photoUri
             Log.d("TAG1", "Current data:" + profileDTO)
             firestore?.collection("userProfiles")?.document(auth?.currentUser?.uid.toString())?.set(profileDTO)
             Log.d("TAG2", "Current data:" + profileDTO)
@@ -94,7 +95,6 @@ class PhotoProfileActivity : AppCompatActivity() {
             if(resultCode == Activity.RESULT_OK){
                 //This is path to the selected image
                 photoUri = data?.data
-
                 addphoto_img.setImageURI(photoUri)
             }else{
                 //취소버튼을 눌렀을때 작동하는 부분
@@ -103,13 +103,13 @@ class PhotoProfileActivity : AppCompatActivity() {
         }
     }
 
-    fun contentUpload(){
+        fun contentUpload(){
         // Make filename
         var timestamp = SimpleDateFormat("yyyyMMddmmss").format(Date())
         var imageFileName = "ProfileImg_" + auth?.currentUser?.email + timestamp + "_.jpg"
 
         var storageRef = storage?.reference?.child("profileImages")?.child(imageFileName)
-
+        p_name = imageFileName
         storageRef?.putFile(photoUri!!)?.addOnSuccessListener {
             Toast.makeText(this, "성공", Toast.LENGTH_LONG).show()
         }

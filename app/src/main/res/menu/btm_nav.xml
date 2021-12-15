@@ -34,6 +34,6 @@
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_profile"
         android:enabled="true"
-        android:title="@string/login"/>
+        android:title="@string/prof"/>
 
 </menu>

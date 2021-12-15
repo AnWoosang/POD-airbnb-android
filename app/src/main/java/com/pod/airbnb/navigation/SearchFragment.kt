@@ -1,15 +1,18 @@
 package com.pod.airbnb.navigation
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
+import com.pod.airbnb.HostingActivity
 import com.pod.airbnb.R
 import com.pod.airbnb.navigation.viewpage.ViewpageAdapt
 import com.pod.airbnb.navigation.viewpage.ViewpageAdapter
 import com.pod.airbnb.navigation.viewpage.ViewpagerAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_search.*
 import kotlinx.android.synthetic.main.fragment_search.view.*
 
@@ -54,7 +57,35 @@ class SearchFragment: Fragment() {
         view.viewPager_onBoarding_2.adapter = ViewpageAdapt(getImgList_2(), getTitleList_2(), getContentList_2())
         view.viewPager_onBoarding_2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
+
+
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        search_btn.setOnClickListener {
+            val fragment: Fragment = TravelFragment()
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.main_content, fragment)?.commit()
+
+        }
+
+        flex_search.setOnClickListener {
+            startActivity(Intent(context, HostingActivity::class.java))
+        }
+
+        viewPager_onBoarding.setOnClickListener {
+            startActivity(Intent(context, HostingActivity::class.java))
+        }
+
+        viewPager_onBoarding_1.setOnClickListener {
+            startActivity(Intent(context, HostingActivity::class.java))
+        }
+
+        viewPager_onBoarding_2.setOnClickListener {
+            startActivity(Intent(context, HostingActivity::class.java))
+        }
+
     }
 
     private fun getImgList(): ArrayList<Int>{

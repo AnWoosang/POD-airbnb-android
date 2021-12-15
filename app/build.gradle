@@ -54,7 +54,13 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:20.0.0'
     implementation 'com.google.firebase:firebase-firestore:24.0.0'
     implementation 'com.google.firebase:firebase-database:20.0.2'
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.2'
     implementation 'com.firebaseui:firebase-ui-storage:7.2.0'
+
+//    실시간 데이터베이스 리사이클러뷰
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
+
 
 //  glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
@@ -65,11 +71,14 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
     implementation 'com.facebook.android:facebook-android-sdk:[8,9)'
 
+//    구글맵
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'org.jetbrains.anko:anko:0.10.5'
+
 //  원형이미지뷰
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-//    당겨서 새로고침
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-
+//    커스텀 검색
+    implementation 'com.github.mancj:MaterialSearchBar:0.7.1'
 }
-

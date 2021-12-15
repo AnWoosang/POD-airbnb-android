@@ -128,14 +128,20 @@
     <string name="job">직업</string>
     <string name="job_ex">예시 : 에어비앤비, 애플, 맥도날드</string>
 
-<!--    호스팅-->
+    <!--    호스팅-->
     <string name="accom_name">숙소 이름</string>
-    <string name="accom_intro">숙소 소개</string>
     <string name="accom_addr">숙소 주소</string>
     <string name="fee">이용 요금</string>
     <string name="photo_up">사진 업로드</string>
     <string name="guests">게스트 수</string>
-    <string name="beds">침대 수</string>
     <string name="type_accom">주택 종류</string>
     <string name="scope_of_use">이용 범위</string>
+    <string name="descript">숙소 소개</string>
+
+    <!--    호스팅__-->
+    <string name="hosting_new">hosting</string>
+    <string name="start_host">호스팅 시작하기</string>
+    <string name="region_hosting">호스팅 지역</string>
+    <string name="ip_search">검색어를 입력하시오</string>
+    <string name="title_activity_hosting_detail">Map</string>
 </resources>

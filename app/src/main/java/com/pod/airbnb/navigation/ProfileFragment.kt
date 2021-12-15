@@ -1,6 +1,7 @@
 package com.pod.airbnb.navigation
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Layout
 import android.util.Log
@@ -9,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.app.ActivityCompat
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -21,10 +23,14 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import com.pod.airbnb.*
 import com.pod.airbnb.navigation.model.ProfileDTO
+import kotlinx.android.synthetic.main.activity_privacy_profile.*
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.fragment_logined_profile.*
+import kotlinx.android.synthetic.main.fragment_profile.*
+import java.text.SimpleDateFormat
 
 class ProfileFragment: Fragment() {
 
@@ -78,6 +84,17 @@ class ProfileFragment: Fragment() {
                     startActivity(Intent(context, ProfileActivity::class.java))
                 }
             }
+
+//            // glide로 사진 이미지뷰에 연결하기
+//            Log.d("glide", "성공")
+//            Glide.with(this)
+//                .load(prof?.photo_uri)
+//                .into(user_img)
+//
+        }else{
+            but_prof.setOnClickListener {
+                startActivity(Intent(context, WhiteLoginActivity::class.java))
+            }
         }
     }
 
@@ -85,5 +102,20 @@ class ProfileFragment: Fragment() {
     fun refreshFragment(fragment: Fragment, fragmentManager: FragmentManager?) {
         var ft: FragmentTransaction? = fragmentManager?.beginTransaction()
         ft?.detach(fragment)?.attach(fragment)?.commit()
+    }
+
+    fun getProfileImageName(): Uri?{
+        val docRef = firestore?.collection("userProfiles")?.document(auth?.currentUser?.uid.toString())
+
+        if(docRef != null){
+            docRef.addSnapshotListener(EventListener<DocumentSnapshot>{ snapshot: DocumentSnapshot?, e: FirebaseFirestoreException? ->
+                if(snapshot != null && snapshot.exists()){
+                    Log.d("TAG", "Current data:" + snapshot.data)
+                }
+                prof = snapshot?.toObject(ProfileDTO::class.java)
+            })
+        }
+
+        return prof?.photo_uri
     }
 }

@@ -1,0 +1,24 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=21:AD:E8:45:FF:FD:9A:00:61:72:95:72:16:25:F4:D0:43:9F:82:FB%3Bcom.pod.airbnb
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.pod.airbnb
+
+    SHA-1 certificate fingerprint:
+    21:AD:E8:45:FF:FD:9A:00:61:72:95:72:16:25:F4:D0:43:9F:82:FB
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBqP-O2HCsYZu2Olc53ctvT0lM62N-8T6E</string>
+</resources>

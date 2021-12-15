@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HostingActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:contentInsetStart="0dp">
+
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:queryHint="@string/ip_search"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/host_accomdation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/new_hosting"
+        android:layout_below="@+id/toolbar"
+        android:background="?selectableItemBackground"
+        android:layout_marginHorizontal="10dp"/>
+
+    <Button
+        android:id="@+id/new_hosting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hosting_new"
+        android:textColor="@color/blue"
+        android:textAllCaps="false"
+        android:layout_marginHorizontal="150dp"
+        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>

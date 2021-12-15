@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -14,6 +15,14 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp">
 
+            <ImageView
+                android:layout_marginVertical="20dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/user_img"
+                android:layout_width="55dp"
+                android:layout_height="55dp"/>
+
+
             <TextView
                 android:id="@+id/user_name"
                 android:layout_width="match_parent"
@@ -21,6 +30,7 @@
                 android:text="이름"
                 android:textSize="30sp"
                 android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/user_img"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
@@ -29,7 +39,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="프로필 보기"
+                android:textSize="12sp"
                 android:layout_below="@+id/user_name"
+                android:layout_toRightOf="@+id/user_img"
                 android:background="@android:color/transparent"
                 android:minWidth="0dp"
                 android:minHeight="0dp"/>
