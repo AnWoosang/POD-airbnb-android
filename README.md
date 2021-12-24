@@ -6,12 +6,12 @@
 
 # 실행화면
 ![image](https://user-images.githubusercontent.com/79970034/147348233-b0d5e555-9493-4093-ac0b-a13f7ed6e413.png)
-![image](https://user-images.githubusercontent.com/79970034/147348244-ef68e6ab-9672-4dc0-a524-e634e8b816bc.png)
 ![image](https://user-images.githubusercontent.com/79970034/147348248-40a66f81-73b3-47b2-9fe3-24d3c972a45f.png)
-![image](https://user-images.githubusercontent.com/79970034/147348254-d33b54f2-85e3-4987-912a-cc2b23efc702.png)
 ![image](https://user-images.githubusercontent.com/79970034/147348262-00b7176a-bfa8-43bd-a197-afe3b456fd91.png)
+
 ![image](https://user-images.githubusercontent.com/79970034/147348269-e2f795fc-e3c7-4b5c-9612-f13c798f4a9d.png)
 
+푸시알림
 
 # Firebase
 Firebase를 활용하여 기존 앱의 여러가지 기능을 구현하였습니다.
